@@ -84,7 +84,7 @@
     {
       "id": "purgedcv",
       "pypi": "purgedcv",
-      "repo": "https://github.com/eslazarev/purged-cross-validation",
+      "repo": "https://github.com/purged-cross-validation",
       "role": "Cross-check CPCV / purged splits vs in-house CPCV",
       "optional_extra": "oss"
     },
