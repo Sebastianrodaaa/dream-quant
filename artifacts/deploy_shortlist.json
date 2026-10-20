@@ -1,0 +1,238 @@
+{
+  "promotion_ready": false,
+  "data_source": "cache",
+  "is_real_data": true,
+  "disclaimer": "Real data \u2014 verify deploy_readiness.json before paper-daemon",
+  "shortlist": [
+    {
+      "symbol": "SPY",
+      "strategy": "safe_haven",
+      "params": {
+        "lookback": 122.08270151049443,
+        "abs_threshold": -0.0003653302646903049,
+        "risk_symbol": "SPY",
+        "risk2_symbol": "QQQ"
+      },
+      "mean_test_sharpe": 0.9451032845182475,
+      "min_test_sharpe": 0.9451032845182475,
+      "folds_pass": 0,
+      "worst_test_drawdown": 0.0,
+      "gates_passed": false,
+      "composite_score": 0.9451032845182475,
+      "rank": 1,
+      "source": "dream_rsi"
+    },
+    {
+      "symbol": "QQQ",
+      "strategy": "absolute_momentum",
+      "params": {
+        "lookback": 252,
+        "abs_threshold": 0.0
+      },
+      "mean_test_sharpe": 1.1997438254737554,
+      "min_test_sharpe": 1.1155808940083702,
+      "folds_pass": 3,
+      "worst_test_drawdown": -0.10797701660710268,
+      "gates_passed": true,
+      "composite_score": 1.1997438254737554,
+      "rank": 1,
+      "source": "grid_search"
+    },
+    {
+      "symbol": "SPY",
+      "strategy": "absolute_momentum",
+      "params": {
+        "lookback": 252,
+        "abs_threshold": 0.0
+      },
+      "mean_test_sharpe": 1.0894391911533006,
+      "min_test_sharpe": 0.6851927186485028,
+      "folds_pass": 2,
+      "worst_test_drawdown": -0.13151361900218628,
+      "gates_passed": true,
+      "composite_score": 1.0894391911533006,
+      "rank": 2,
+      "source": "grid_search"
+    },
+    {
+      "symbol": "USMV",
+      "strategy": "absolute_momentum",
+      "params": {
+        "lookback": 252,
+        "abs_threshold": 0.0
+      },
+      "mean_test_sharpe": 1.0390088327003497,
+      "min_test_sharpe": 0.9946345722311964,
+      "folds_pass": 3,
+      "worst_test_drawdown": -0.11672461517723681,
+      "gates_passed": true,
+      "composite_score": 1.0390088327003497,
+      "rank": 3,
+      "source": "grid_search"
+    },
+    {
+      "symbol": "QQQ",
+      "strategy": "safe_haven",
+      "params": {
+        "lookback": 126,
+        "abs_threshold": 0.0,
+        "risk_symbol": "SPY",
+        "risk2_symbol": "QQQ"
+      },
+      "mean_test_sharpe": 0.9475080489488579,
+      "min_test_sharpe": 0.8848458691187442,
+      "folds_pass": 3,
+      "worst_test_drawdown": -0.10797701660710257,
+      "gates_passed": true,
+      "composite_score": 0.9475080489488579,
+      "rank": 4,
+      "source": "grid_search"
+    },
+    {
+      "symbol": "HYG",
+      "strategy": "dual_momentum",
+      "params": {
+        "lookback": 126,
+        "benchmark": "SPY",
+        "abs_threshold": 0.0
+      },
+      "mean_test_sharpe": 0.8984959291862246,
+      "min_test_sharpe": 0.4338692744819825,
+      "folds_pass": 1,
+      "worst_test_drawdown": -0.041235020875683454,
+      "gates_passed": false,
+      "composite_score": 0.8984959291862246,
+      "rank": 5,
+      "source": "grid_search"
+    },
+    {
+      "symbol": "QQQ",
+      "strategy": "dual_momentum",
+      "params": {
+        "lookback": 126,
+        "benchmark": "SPY",
+        "abs_threshold": 0.0
+      },
+      "mean_test_sharpe": 0.8430855843723469,
+      "min_test_sharpe": 0.7539497163707085,
+      "folds_pass": 2,
+      "worst_test_drawdown": -0.12458249765360373,
+      "gates_passed": true,
+      "composite_score": 0.8430855843723469,
+      "rank": 6,
+      "source": "grid_search"
+    },
+    {
+      "symbol": "SPLV",
+      "strategy": "absolute_momentum",
+      "params": {
+        "lookback": 189,
+        "abs_threshold": 0.0
+      },
+      "mean_test_sharpe": 0.8359595613367717,
+      "min_test_sharpe": 0.4238765712879888,
+      "folds_pass": 2,
+      "worst_test_drawdown": -0.11022645550191063,
+      "gates_passed": true,
+      "composite_score": 0.8359595613367717,
+      "rank": 7,
+      "source": "grid_search"
+    }
+  ],
+  "top_markets": [
+    {
+      "rank": 1,
+      "symbol": "SPY",
+      "asset_class": "equities_etfs",
+      "fitness_score": 0.785840707608928
+    },
+    {
+      "rank": 2,
+      "symbol": "QQQ",
+      "asset_class": "equities_etfs",
+      "fitness_score": 0.6735905714023473
+    },
+    {
+      "rank": 3,
+      "symbol": "GLD",
+      "asset_class": "equities_etfs",
+      "fitness_score": 0.6625911576167681
+    },
+    {
+      "rank": 4,
+      "symbol": "TLT",
+      "asset_class": "equities_etfs",
+      "fitness_score": 0.6222649195977619
+    },
+    {
+      "rank": 5,
+      "symbol": "HYG",
+      "asset_class": "equities_etfs",
+      "fitness_score": 0.6169597499829128
+    },
+    {
+      "rank": 6,
+      "symbol": "EFA",
+      "asset_class": "equities_etfs",
+      "fitness_score": 0.6015699160706124
+    },
+    {
+      "rank": 7,
+      "symbol": "IWM",
+      "asset_class": "equities_etfs",
+      "fitness_score": 0.5902397733840603
+    },
+    {
+      "rank": 8,
+      "symbol": "USMV",
+      "asset_class": "defensive_optional",
+      "fitness_score": 0.5026167389522121
+    }
+  ],
+  "risk_notes": {
+    "max_test_drawdown_in_shortlist": -0.13151361900218628,
+    "unique_symbols": [
+      "SPY",
+      "QQQ",
+      "USMV",
+      "HYG",
+      "SPLV"
+    ],
+    "asset_classes": [
+      "defensive_optional",
+      "equities_etfs"
+    ],
+    "do_not_deploy": [
+      {
+        "symbol": "SPY",
+        "strategy": "safe_haven",
+        "reason": "Failed promotion gates (mean OOS Sharpe 0.95)"
+      },
+      {
+        "symbol": "HYG",
+        "strategy": "dual_momentum",
+        "reason": "Failed promotion gates (mean OOS Sharpe 0.90)"
+      },
+      {
+        "symbol": "HYG",
+        "strategy": "safe_haven",
+        "reason": "Failed promotion gates (mean OOS Sharpe 0.76)"
+      },
+      {
+        "symbol": "USMV",
+        "strategy": "*",
+        "reason": "Low market fitness (0.50)"
+      },
+      {
+        "symbol": "SPLV",
+        "strategy": "*",
+        "reason": "Low market fitness (0.49)"
+      },
+      {
+        "symbol": "XLE",
+        "strategy": "*",
+        "reason": "Low market fitness (0.41)"
+      }
+    ]
+  }
+}
