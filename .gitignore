@@ -1,1 +1,12 @@
-@file:/workspace/.gitignore
+data/cache/*.csv
+data/cache/*.meta.json
+!data/cache/.gitkeep
+
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+dist/
+build/
+*.egg
