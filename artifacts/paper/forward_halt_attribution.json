@@ -1,0 +1,47 @@
+{
+  "halt_date": "2025-04-04 04:00:00+00:00",
+  "portfolio_return": -0.03424245490604273,
+  "portfolio_return_pct": -3.424245490604273,
+  "regime_scale": 1.0,
+  "overlays_enabled": false,
+  "prior_bar": "2025-04-03 04:00:00+00:00",
+  "prior_equity": 574377.229142448,
+  "strategy": "risk_parity_regime",
+  "rebalance_turnover": 0.0,
+  "weights": {
+    "SPY": 0.454858501794047,
+    "TLT": 0.14989815903820175,
+    "GLD": 0.3952433391677513
+  },
+  "asset_returns": {
+    "SPY": -0.05854305020680883,
+    "TLT": 0.010887293389920227,
+    "GLD": -0.02339226273628292
+  },
+  "contributions": {
+    "SPY": {
+      "weight": 0.454858501794047,
+      "asset_return": -0.05854305020680883,
+      "contribution": -0.02662880410752274,
+      "pct_of_day": 0.7776546448141363
+    },
+    "TLT": {
+      "weight": 0.14989815903820175,
+      "asset_return": 0.010887293389920227,
+      "contribution": 0.0016319852360578248,
+      "pct_of_day": -0.047659703153170536
+    },
+    "GLD": {
+      "weight": 0.3952433391677513,
+      "asset_return": -0.02339226273628292,
+      "contribution": -0.00924563603457782,
+      "pct_of_day": 0.2700050583390343
+    }
+  },
+  "primary_driver": "SPY",
+  "largest_drag": "SPY",
+  "largest_drag_contribution": -0.02662880410752274,
+  "attributed_at": "2026-09-18T17:49:20.012504+00:00",
+  "halt_reason": "max daily loss kill: -3.42%",
+  "kill_threshold": 0.03
+}

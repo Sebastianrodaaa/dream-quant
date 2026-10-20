@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "errors": [],
+  "warnings": [],
+  "forward_bars": 430,
+  "last_bar": "2026-09-18 04:00:00+00:00",
+  "halted": false,
+  "kill_switch_trips": 0,
+  "grinding_frozen": true,
+  "grinding_frozen_policy": "regime_ov_bond20_vt10_ros67_vss82_ts70_rb49"
+}

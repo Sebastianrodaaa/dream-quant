@@ -1,0 +1,20 @@
+{
+  "equity": 730294.08878728,
+  "peak_equity": 748061.6039608828,
+  "cash": 100000.0,
+  "last_bar_timestamp": "2026-09-18 04:00:00+00:00",
+  "paper_start_timestamp": "2024-12-30 00:00:00-05:00",
+  "halted": false,
+  "halt_reason": "",
+  "sleeve_weights": {
+    "SPY:risk_parity_regime:0": 0.49282012370655276,
+    "TLT:risk_parity_regime:0": 0.13209902919498537,
+    "GLD:risk_parity_regime:0": 0.2350506089521406
+  },
+  "kill_switch_trips": 0,
+  "trade_log": [],
+  "mode": "forward",
+  "backfill_complete": true,
+  "forward_bars": 430,
+  "risk_policy_id": "regime_ov_bond20_vt10_ros67_vss82_ts70_rb49"
+}
