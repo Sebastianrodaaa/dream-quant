@@ -6,7 +6,7 @@
       "name": "Dream-RSI loop",
       "in_house": true,
       "cli": "dream-quant rsi-loop | research-try (embedded)",
-      "description": "Online explore → discovery trees → dream/replay policy improvement BEFORE champion selection."
+      "description": "Online explore \u2192 discovery trees \u2192 dream/replay policy improvement BEFORE champion selection."
     },
     {
       "id": "sota_audit",
@@ -33,34 +33,114 @@
     }
   ],
   "rsi_literature_map": [
-    {"id": "dream_rsi", "ref": "Zheng et al. 2026 arXiv:2609.14858", "oss": "code may be unreleased"},
-    {"id": "dgm", "ref": "jennyzzt/dgm", "license": "Apache-2.0"},
-    {"id": "reflexion", "ref": "Shinn et al. Reflexion"},
-    {"id": "expel", "ref": "ExpeL experiential learning"},
-    {"id": "voyager", "ref": "Voyager skill library pattern"},
-    {"id": "alpha_agent", "ref": "AlphaAgent"},
-    {"id": "quant_evolve", "ref": "QuantEvolve (paper / unofficial forks)"},
-    {"id": "ada_planner", "ref": "AdaPlanner"},
-    {"id": "self_refine", "ref": "Self-Refine"},
-    {"id": "godel_agent", "ref": "Gödel Agent"},
-    {"id": "rsihub", "ref": "RSIHub catalog"}
+    {
+      "id": "dream_rsi",
+      "ref": "Zheng et al. 2026 arXiv:2609.14858",
+      "oss": "code may be unreleased"
+    },
+    {
+      "id": "dgm",
+      "ref": "jennyzzt/dgm",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "reflexion",
+      "ref": "Shinn et al. Reflexion"
+    },
+    {
+      "id": "expel",
+      "ref": "ExpeL experiential learning"
+    },
+    {
+      "id": "voyager",
+      "ref": "Voyager skill library pattern"
+    },
+    {
+      "id": "alpha_agent",
+      "ref": "AlphaAgent"
+    },
+    {
+      "id": "quant_evolve",
+      "ref": "QuantEvolve (paper / unofficial forks)"
+    },
+    {
+      "id": "ada_planner",
+      "ref": "AdaPlanner"
+    },
+    {
+      "id": "self_refine",
+      "ref": "Self-Refine"
+    },
+    {
+      "id": "godel_agent",
+      "ref": "G\u00f6del Agent"
+    },
+    {
+      "id": "rsihub",
+      "ref": "RSIHub catalog"
+    }
   ],
   "preferred_integrations": [
-    {"id": "purgedcv", "pypi": "purgedcv", "repo": "https://github.com/eslazarev/purged-cross-validation", "role": "Cross-check CPCV / purged splits vs in-house CPCV", "optional_extra": "oss"},
-    {"id": "vectorbt", "pypi": "vectorbt", "repo": "https://github.com/polakowo/vectorbt", "role": "Fast param sweeps feeding Dream-RSI / ranking grid", "optional_extra": "oss"},
-    {"id": "quantstats", "pypi": "quantstats", "repo": "https://github.com/ranaroussi/quantstats", "role": "Lightweight tearsheets when installed", "optional_extra": "oss"}
+    {
+      "id": "purgedcv",
+      "pypi": "purgedcv",
+      "repo": "https://github.com/eslazarev/purged-cross-validation",
+      "role": "Cross-check CPCV / purged splits vs in-house CPCV",
+      "optional_extra": "oss"
+    },
+    {
+      "id": "vectorbt",
+      "pypi": "vectorbt",
+      "repo": "https://github.com/polakowo/vectorbt",
+      "role": "Fast param sweeps feeding Dream-RSI / ranking grid",
+      "optional_extra": "oss"
+    },
+    {
+      "id": "quantstats",
+      "pypi": "quantstats",
+      "repo": "https://github.com/ranaroussi/quantstats",
+      "role": "Lightweight tearsheets when installed",
+      "optional_extra": "oss"
+    }
   ],
   "stage2_documented_only": [
-    {"id": "nautilus_trader", "repo": "https://github.com/nautechsystems/nautilus_trader", "role": "Event-driven realism (future)"},
-    {"id": "lean", "repo": "https://github.com/QuantConnect/Lean", "role": "Event-driven backtest (future)"},
-    {"id": "zipline_reloaded", "repo": "https://github.com/stefan-jansen/zipline-reloaded", "role": "Pipeline backtest (future)"},
-    {"id": "quant_evolve", "role": "Evolutionary strategy search — ideas mapped to Dream-RSI orchestration"},
-    {"id": "alpha_evo", "role": "Alpha evolution inspiration — not vendored"}
+    {
+      "id": "nautilus_trader",
+      "repo": "https://github.com/nautechsystems/nautilus_trader",
+      "role": "Event-driven realism (future)"
+    },
+    {
+      "id": "lean",
+      "repo": "https://github.com/QuantConnect/Lean",
+      "role": "Event-driven backtest (future)"
+    },
+    {
+      "id": "zipline_reloaded",
+      "repo": "https://github.com/stefan/zipline-reloaded",
+      "role": "Pipeline backtest (future)"
+    },
+    {
+      "id": "quant_evolve",
+      "role": "Evolutionary strategy search \u2014 ideas mapped to Dream-RSI orchestration"
+    },
+    {
+      "id": "alpha_evo",
+      "role": "Alpha evolution inspiration \u2014 not vendored"
+    }
   ],
   "probes": {
-    "purgedcv": {"installed": false, "error": "No module named 'purgedcv'"},
-    "vectorbt": {"installed": false, "error": "No module named 'vectorbt'"},
-    "quantstats": {"installed": false, "error": "No module named 'quantstats'"},
+    "purgedcv": {
+      "installed": false,
+      "error": "No module named 'purgedcv'"
+    },
+    "vectorbt": {
+      "installed": false,
+      "error": "No module named 'vectorbt'"
+    },
+    "quantstats": {
+      "installed": false,
+      "error": "No module named 'quantstats'"
+    },
     "python": "3.12.3"
   }
 }
