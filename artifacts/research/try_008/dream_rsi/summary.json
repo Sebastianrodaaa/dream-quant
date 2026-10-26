@@ -1,0 +1,24 @@
+{
+  "rounds": [
+    {
+      "round": 1,
+      "best_sharpe": 0.8935025644729527,
+      "replay_score_before": 0.0,
+      "replay_score_after": 0.5685025644729528,
+      "policy_config": {
+        "min_sharpe_to_expand": -0.5,
+        "expand_top_k": 2,
+        "mutation_scale": 0.12,
+        "stop_after_empty_batches": 2,
+        "quality_metric": "sharpe"
+      }
+    }
+  ],
+  "final_policy_config": {
+    "min_sharpe_to_expand": -0.5,
+    "expand_top_k": 2,
+    "mutation_scale": 0.12,
+    "stop_after_empty_batches": 2,
+    "quality_metric": "sharpe"
+  }
+}
