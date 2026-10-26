@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dream-quant"
+version = "0.1.0"
+description = "Dream-RSI-style automated quantitative trading research (paper mode only)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Sebastian Roda" }]
+dependencies = [
+    "click>=8.1",
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+fetch = ["yfinance>=0.2"]
+dev = ["pytest>=7.4", "yfinance>=0.2"]
+oss = [
+    "purgedcv>=0.1",
+    "vectorbt>=0.26",
+    "quantstats>=0.0.62",
+]
+
+[project.scripts]
+dream-quant = "dream_quant.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["dream_quant"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
