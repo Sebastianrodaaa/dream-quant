@@ -10,3 +10,7 @@ __pycache__/
 dist/
 build/
 *.egg
+
+# Ephemeral tooling (e.g. local MCP server unpack)
+package/
+modelcontextprotocol-server-github-*.tgz
