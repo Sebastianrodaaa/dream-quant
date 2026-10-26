@@ -1,0 +1,236 @@
+universe:
+  equities_etfs:
+  - SPY
+  - QQQ
+  - IWM
+  - GLD
+  - TLT
+  - HYG
+  - XLE
+  - EFA
+  defensive_optional:
+  - SPLV
+  - USMV
+  crypto_optional:
+  - BTC-USD
+  - ETH-USD
+test_symbols:
+- SPY
+- QQQ
+- IWM
+data:
+  start: '2005-01-01'
+  end: latest
+  legacy_end: '2024-12-31'
+  symbol_starts:
+    SPY: '2005-01-01'
+    QQQ: '2005-01-01'
+    IWM: '2005-01-01'
+    GLD: '2005-01-01'
+    TLT: '2005-01-01'
+    HYG: '2007-04-01'
+    XLE: '2005-01-01'
+    EFA: '2005-01-01'
+    SPLV: '2011-05-01'
+    USMV: '2011-10-01'
+  fixture_path: dream_quant/data/fixtures/universe_ohlcv.csv
+  cache_dir: data/cache
+backtest:
+  initial_capital: 100000.0
+  commission_bps: 2.5
+  slippage_bps: 2.5
+  vol_target: 0.1
+  min_hold_bars: 3
+validation:
+  n_folds: 3
+  min_train_frac: 0.5
+gates:
+  min_oos_sharpe: 0.8
+  min_folds_passing_sharpe: 2
+  max_drawdown: 0.2
+  min_oos_trades: 30
+  max_sharpe_gap: 1.0
+  portfolio_min_sharpe: 0.8
+  portfolio_max_drawdown: 0.2
+  max_param_sensitivity: 0.75
+  min_cost_10bps_sharpe: 0.5
+research:
+  weekly_bars: false
+  turnover_penalty: 0.08
+  near_pass_sharpe: 0.65
+  min_book_sleeves: 3
+  rsi_rounds: 1
+scan:
+  train_fraction: 0.7
+  top_markets: 8
+  top_strategies: 8
+  min_test_bars: 60
+  include_crypto: false
+online:
+  max_attempts: 20
+  batch_size: 3
+  seed: 42
+policy:
+  min_sharpe_to_expand: -0.5
+  expand_top_k: 2
+  mutation_scale: 0.12
+  stop_after_empty_batches: 2
+paper:
+  champion: rp2_corr35_rebal42
+  champion_book:
+  - strategy: risk_parity_regime
+    params:
+      symbols:
+      - SPY
+      - TLT
+      - GLD
+      vol_window: 63
+      rebalance_bars: 49
+      corr_threshold: 0.0
+      bond_scale_on_corr: 0.2
+      corr_window: 63
+      portfolio_vol_target: 0.1
+  champion_cfg:
+    backtest:
+      min_hold_bars: 21
+      vol_target: null
+    overlays:
+      enabled: true
+      use_regime_scale: true
+      use_risk_off_both_weak: true
+      use_sleeve_filters: false
+      use_dd_throttle: false
+      equity_momentum_symbol: QQQ
+      bond_momentum_symbol: TLT
+      dual_momentum_lookback: 63
+      risk_off_scale: 0.67
+      vol_window: 20
+      vol_percentile_lookback: 252
+      vol_percentile_threshold: 0.9
+      vol_spike_scale: 0.82
+      trend_ma_window: 200
+      trend_scale: 0.7
+      scale_floor: 0.25
+  grinding_frozen: true
+  grinding_frozen_policy: regime_ov_bond20_vt10_ros67_vss82_ts70_rb49
+  grinding_frozen_note: Overlay/rebalance grind on bond20/rb49 cluster frozen; forward-90d stretch 0.15 is documented ceiling.
+  risk_policy:
+    id: regime_ov_bond20_vt10_ros67_vss82_ts70_rb49
+    reference_variant: rp2_corr22_regime_ov_vt10
+    sota_verified: true
+    note: Refinement rb=49 ros=0.67 vss=0.82
+    promoted_at: '2026-09-18T21:09:58.275661+00:00'
+    forward_replay:
+      rolling_90d_sharpe: 0.10469328028681012
+      rolling_30d_sharpe: 0.3456473166304981
+      forward_bars: 430
+      halted: false
+  initial_cash: 100000.0
+  max_positions: 5
+  max_weight: 0.25
+  max_correlation: 0.85
+  kill_switches:
+    max_drawdown_from_peak: 0.15
+    max_daily_loss: 0.03
+    max_position_pct: 0.35
+    max_gross_exposure: 1.0
+overlays:
+  enabled: true
+  use_regime_scale: true
+  use_sleeve_filters: false
+  use_dd_throttle: false
+  use_risk_off_both_weak: true
+  spy_symbol: SPY
+  equity_momentum_symbol: QQQ
+  bond_momentum_symbol: TLT
+  dual_momentum_lookback: 63
+  risk_off_scale: 0.0
+  vol_window: 20
+  vol_percentile_lookback: 252
+  vol_percentile_threshold: 0.9
+  vol_spike_scale: 0.75
+  trend_ma_window: 200
+  trend_scale: 0.65
+  scale_floor: 0.0
+  sleeve_losing_streak_days: 5
+  sleeve_streak_scale: 0.6
+  sleeve_perf_lookback: 63
+  sleeve_perf_scale: 0.4
+  dd_soft_thresholds:
+  - -0.1
+  - -0.14
+  - -0.18
+  dd_soft_scales:
+  - 0.92
+  - 0.8
+  - 0.6
+consistency_gates:
+  pct_90d_positive_min: 0.7
+  worst_90d_sharpe_min: -1.0
+  median_252d_sharpe_min: 0.5
+  full_sharpe_min: 0.87
+forward_consistency:
+  rolling_90d_sharpe_min: 0.0
+  rolling_252d_sharpe_min_deploy: 0.0
+  rolling_252d_sharpe_target: 0.5
+  max_dd_from_peak: 0.12
+  equity_above_ma_days: 90
+ops_consistency:
+  rolling_30d_step_bars: 21
+  median_30d_sharpe_min: 0.0
+  pct_30d_positive_min: 0.55
+  last_90d_sharpe_min: 0.0
+regime_search:
+  holdout_bars: 252
+  min_sleeves: 3
+  max_sleeves: 5
+  oos_min_sharpe: 0.8
+  train_252d_sharpe_min: 0.0
+sota_audit:
+  holdout_bars: 252
+  embargo_bars: 126
+  n_perm: 500
+  pbo_method: neighbors_only
+  permutation_method: block_21d
+  permutation_block_size: 21
+  use_preregistered_trials_only: true
+  exclude_symbols:
+  - TLT
+  min_sleeves: 3
+  max_sleeves: 4
+  max_pool: 10
+  max_books: 80
+  overlay_grid:
+  - scale_floor: 0.0
+    vol_spike_scale: 0.75
+    trend_scale: 0.65
+    use_risk_off_both_weak: true
+  - scale_floor: 0.25
+    vol_spike_scale: 0.8
+    trend_scale: 0.7
+    use_risk_off_both_weak: true
+close_90d:
+  min_sleeves: 3
+  max_sleeves: 4
+  oos_min_sharpe: 0.8
+  train_252d_sharpe_min: 0.0
+  exclude_symbols:
+  - TLT
+  qqq_abs_threshold_grid:
+  - 0.01
+  - 0.02
+  - 0.03
+  max_pool_candidates: 12
+  max_book_combinations: 400
+  overlay_grid:
+  - scale_floor: 0.0
+    vol_spike_scale: 0.75
+    trend_scale: 0.65
+    use_risk_off_both_weak: true
+    risk_off_scale: 0.0
+  - scale_floor: 0.25
+    vol_spike_scale: 0.8
+    trend_scale: 0.7
+    use_risk_off_both_weak: true
+    risk_off_scale: 0.25
+output_dir: artifacts
